@@ -13,7 +13,7 @@ $ uvicorn main:app --reload
 ```
 
 ```python
-# models/Categories.py
+# models/Student.py
 
 from pydantic import BaseModel
 
@@ -55,8 +55,8 @@ async def get_student():
 
         # Execute SQL query to fetch all student
         cursor.execute("SELECT * FROM student")
-        department = cursor.fetchall()
-        return department
+        student = cursor.fetchall()
+        return student
     except mysql.connector.Error as e:
         # Handle MySQL errors
         return JSONResponse(content={"error": f"MySQL Error: {e}"}, status_code=500)
